@@ -11,10 +11,11 @@ import _core
 import _plotting
 
 def test(f_config, display = True):
+    print("wtf")
     model, scene, after_tps = _core.run_ini(f_config)
     if display:
         _plotting.displayABC(model, scene, after_tps)
-
+    return model, scene, after_tps
 
 def run_executable(gmmreg_exe, f_config, method, display = True):
     cmd = '%s %s %s'%(gmmreg_exe, f_config, method)

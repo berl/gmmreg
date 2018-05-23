@@ -219,11 +219,14 @@ def run_ini(f_config):
     c.read(f_config)
     model_file = c.get(section_common,'model')
     scene_file = c.get(section_common,'scene')
+    print("loading scene"+scene_file)
+
     model = loadtxt(model_file)
     scene = loadtxt(scene_file)
     try:
         ctrl_pts_file = c.get(section_common,'ctrl_pts')
         ctrl_pts = loadtxt(ctrl_pts_file)
+        print("loading "+ctrl_pts_file)
     except:
         ctrl_pts = model
     level = int(c.get(section_option,'level'))
